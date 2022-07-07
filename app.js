@@ -8,7 +8,7 @@ submitBtn[0].addEventListener('click', () => {
 function dog() {
     const input = document.getElementById("formEntry").value;
     if (input === '') {
-      alert ('please enter a name')
+      alert ('please enter a name');
     }
     const URL = `https://api.nationalize.io/?name=${input}`;
     fetch(URL).then(response => response.json()).then(data => {
@@ -26,16 +26,14 @@ function dog() {
 
 const submitBtn2 = document.getElementsByClassName("btn-secondary");
 submitBtn2[0].addEventListener('click', cat);
-
 function cat() {
     const input = document.getElementById("formEntry2").value;
     if (input === '') {
       alert ('please enter a two letter country abbreviation')
     }
-    else{
+    else {
     const URL = ` http://api.worldbank.org/v2/country/${input}?format=json`;
     fetch(URL).then(response => response.json()).then(data => {
-        // console.log(data)
         // let resultContainer2 = document.getElementById("result-container2")
         let country = data[1][0].name;
         // let resultBox2 = document.createElement("div");
